@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 100%;
+            height: 100%;
+            background: url(IMG/home-city.bmp) no-repeat;
+            /* background: linear-gradient(60deg,rgb(2, 5, 18) 10%,rgb(49, 55, 78) 50%,black 90%) repeat; */
+
+            background-size: 100% 100%;
+            background-attachment: fixed;/* 不设置的话页面滑动时，背景会不铺满*/
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none; 
+        }
+
+        .blank1{
+            width: 10px;
+            height: 20px;
+        }
+
+        .header{
+            width: 80%;
+            margin: auto;
+            background: url(IMG/header-background.jpg) repeat;
+            text-align: center;
+        }
+
+        .header img{
+            margin: 0 auto;
+            width: 90%;
+            height: 400px;
+            padding-top: 20px;
+        }
+
+        .bt{
+            font-family: "三极黑金简体 粗";
+            font-size: 50pt;
+            color: rgb(30, 30, 30);
+
+            text-align: left;
+            line-height: 80pt;
+            padding-top: 10px;
+            padding-bottom:40px;
+            padding-left: 7%;
+        }
+
+        .content{
+            width: 79.7%;
+            margin: auto;
+
+            /* border-left-color: rgb(118, 173, 235);
+            border-left-style: dashed;
+            border-left-width: 2px;
+            border-right-color: rgb(118, 173, 235);
+            border-right-style: dashed;
+            border-right-width: 2px; */
+
+            box-shadow: 0 0 8px 8px rgba(6, 48, 88, 0.732);
+
+            background-color: rgba(2, 3, 16, 0.641)
+        }
+
+        .text{
+            color: rgb(242, 242, 242);
+            font-family: "方正报宋_GBK";
+            font-weight: 200;
+            font-size: 16pt;
+
+            width: 90%;
+            margin:auto;
+            line-height: 30pt;
+        }
+
+        .graph{
+            width: 80%;
+            margin-left: 14%;
+            /* text-align: center; */
+            border-left: bisque 2px solid;
+            border-radius: 15px;
+
+            /* 调试背景色 */
+            /* background: rgb(61, 61, 61); */
+        }
+
+        .graph-bt{
+            font-family: "方正小标宋简体";
+            font-size: 30pt;
+            color: rgb(207, 241, 255);
+
+            margin-left: 5%;
+            text-align: left;
+            line-height: 70pt;
+            padding-top: 20px;
+            padding-bottom:0px;
+            /* padding-left: 7%; */
+        }
+
+        .graph-fbt{
+            width: 400pt;
+            font-size: 20pt;
+            font-family:'方正报宋_GBK';
+            font-weight: 600;
+            line-height: 20pt;
+            /* padding-left: 10%; */
+            /* padding-top: 10px;
+            padding-bottom: 10px; */
+            border-radius: 0 20pt 20pt 0;
+            overflow: hidden;
+        }
+
+        .graph-addition{
+            /* margin: auto; */
+            width: 75%;
+            color: rgb(236, 236, 236);
+            margin-left: 10%;
+            text-align: left;
+            font-size: 14pt;
+            font-family:'方正报宋_GBK';
+            line-height: 21pt;
+            padding-top: 10px;
+        }
+
+        .graph img{
+            padding-top: 15px;
+            width: 60%;
+            margin-left: 15%;
+            text-align: center;
+        }
+
+        .serial-img{
+            margin: auto;
+            text-align: center;
+            width: 75%;
+            padding-top: 180px;
+            padding-bottom: 60px;
+
+
+        }
+
+        .text-jz-hlt{
+            color: rgb(255, 255, 255);
+            font-family: "方正报宋_GBK";
+            font-weight: 600;
+            font-size: 22pt;
+
+            line-height: 40pt;
+            text-align: center;
+            padding-bottom: 260px;
+        }
+
+        .text-img-addition{
+            margin-left: 10%;
+            width: 75%;
+            color: rgb(236, 236, 236);
+            text-align: left;
+            font-size: 13pt;
+            font-family:'方正报宋_GBK';
+            line-height: 21pt;
+            padding-top: 10px;
+        }
+
+        .footer{
+            font-size: 13pt;
+            font-family: '方正报宋_GBK';
+            text-align: center;
+            line-height: 17pt;
+            color: rgb(47, 47, 47);
+            /* text-shadow: 0 0 5px rgb(12, 23, 96); */
+            background-color: rgb(255, 233, 199);
+        }
+
+        .nav{
+            width: 25%;
+            height: 60%;
+            margin-left: 1%;
+            margin-top: 150px;
+            float: left;
+            /* background-color: rgb(4, 232, 50); */
+            position: fixed;
+            
+        }
+
+        .nav li{
+            width: 75%;
+            text-decoration: none;
+            text-align: center;
+            background: #0b292a7f;
+            box-shadow:0 0 3px 3px #79fbffbb;
+            border-radius: 12px;
+            padding: 25px;
+            line-height: 20px;
+            margin-left: -70%;
+            float: left;
+            transition: 0.6s;
+            display: ;
+        }
+
+        .nav a{
+            font-size: 22pt;
+            font-family: '方正报宋_GBK';
+            font-weight: 700;
+            color: black;
+            text-align: center;
+            display: block;
+            float: left;
+            margin-left: 15%;
+        }
+
+        .nav-tip{
+            float: left;
+            position: fixed;
+            margin-left: 20%;
+
+            font-size: 35pt;
+            color: rgb(255, 255, 255);
+            font-family: "三极黑金简体 粗";
+            text-shadow: 0 0 3px rgb(48, 48, 48);
+        }
+
+        .nav li:hover{
+            margin-left: 0;
+            background: #7ce3ff;
+        }
+
+        .nav-guide{
+            width: 25px;
+            font-family: '方正报宋_GBK';
+            margin-left: 11%;
+            position: fixed;
+            margin-top: 200px;
+            background: bisque;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="nav-guide">
+        ←点击跳转
+    </div>
+
+    <div class="nav" id="nav1">
+        <li>
+            <a href="#0">导言</a>
+            <div class="nav-tip">00</div>
+        </li>
+        <br><br><br><br><br>
+
+        <li><a href="#1">“ 供过于求 ”</a>
+            <div class="nav-tip">01</div>
+        </li>
+        <br><br><br><br><br>
+        <li><a href="#2">“ 统计陷阱 ”</a>
+            <div class="nav-tip">02</div>
+        </li>
+        <br><br><br><br><br>
+        <li><a href="#3">“ 心态转变 ”</a>
+            <div class="nav-tip">03</div>
+        </li>
+        <br><br><br><br><br>
+        <li><a href="#4">“ 就业围城 ”</a>
+            <div class="nav-tip">04</div>
+        </li>
+        
+    </div>
+
+    <div class="header">
+        <img src="IMG/header-img.jpg">
+        <div class="bt">
+            “就职冰河期”结束，<br>
+            <span style="margin-left: 15%;">“就职反选时代”已来？</span>
+            <br>
+        </div>
+    </div>
+
+    
+
+    <div class="content">
+        <div class="text" id="0">
+            <br><br><br><br><br>
+            “本科毕业生就业率达到 98.1%，人均起薪达到 22.6 万日元（折合人民币 10567 元），较去年涨了 4%”。
+            <br><br>
+            近期，国内多家媒体，密集描绘了 2024 年日本就业市场“日企抢人”“毕业生任意挑工作”等景气图景。仿佛日本一夜间结束了“就职冰河期”，迎来了“就职反选时代”。
+            根据日本文部科学省的统计，98.1% 的就业率，是自 2004 年来的新高。今年的日本应届生们，似乎遇上了一个二十年来，最容易就业的年头。
+            <br><br>
+            事实果真如此吗？老龄化严重、人口连续多年减少，年轻人就可以没那么卷了吗？
+            <br><br><br><br>
+        </div>
+
+    <!-- ——————第一段—————— -->
+
+        <div class="serial-img" id="1">
+            <img src="IMG/001.png" style="margin: auto;">
+        </div>
+
+        <div class="text-jz-hlt">
+            能反选公司早不是新闻，
+            <br>
+            20年来毕业生岗位供过于求
+        </div>
+
+        <div class="text">
+            <br>
+            日本应届生就业，往往在毕业 1 年前的 3、4 月份，就要开始全力以赴找工作。日语称之为“就活”（就职活动），每个应届毕业生的“就活”，大概要持续半年到一年。
+            <br><br>
+            去年 8 月，日本就业信息网站“Mynavi”对 1982 名应届毕业生进行调查后发现：83.9% 的毕业生已经获得了“内定”（即公司正式录取 offer），平均“内定”数为 2.5，
+            也就是说他们找工作还不到半年，每人平均就有 2.5 家企业可供选择。
+            <br><br>
+            民间研究机构“Recruit Works研究所”持续统计了日本劳动力市场的供需情况，统计时间在每年 4 月底。该研究所在报告中，使用了“求人倍率”这个统计指标。
+            <br><br>
+            所谓“求人倍率”，就是市场上职位数量和求职者人数的比率。若“求人倍率”大于 1，则说明市场上的职位比求职者多；小于 1，则说明该岗位竞争者超过 1 人。
+            <br><br>
+            根据该研究所的统计，
+            <span style="background-color: rgb(157, 184, 221);color: black; font-weight: 600;padding-top: 5px;padding-bottom: 5px;">
+            从 2004 年到 2024 年，日本应届生劳动力市场的求人倍率，从来没有小于过 1。这说明 20 年来，日本的应届生所面对的整体求职竞争压力是不大的。
+            </span>
+        </div>
+
+        <br><br>
+
+        <div class="graph">
+            <div class="graph-bt">
+                图表：20年来日本应届生劳动力供需情况
+            </div>
+            <div class="graph-fbt">
+                <div style="width: 500pt;background-color:bisque;padding:10px 0px;text-align: left;">
+                    <span>
+                    ⭕应届生整体压力不大，除非想进巨型企业
+                    </span>
+                </div>
+            </div>
+            <div class="graph-addition">
+                注：求人倍率统计方法为：求人倍率＝市场人力需求总数/应届生希望就职人数
+                <br>
+                其中“人力需求总数”和“希望就职人数”为该研究机构通过日本文部科学省等官方机构的数据推算得出
+            </div>
+            <img src="IMG/graph1.png">
+            <br>
+            <img src="IMG/graph2.png">
+            <br><br>
+            <div class="graph-fbt">
+                <div style="width: 500pt;background-color:bisque;padding:10px 0px;text-align: left;">
+                    <span>
+                    ⭕行业之间人力需求差距十分悬殊
+                    </span>
+                </div>
+            </div>
+            <img src="IMG/graph2.png">
+            <div class="graph-addition">
+                数据来源：日本民间研究机构日本民间研究机构“Recruit Works研究所”相关调查
+                <br>
+            </div>
+            <br>
+        </div>
+        
+        <div class="text">
+            <br><br><br>
+            举例来说：2024 年日本的大学毕业生，如果选择 300 人以下的小企业就职，那简直是“易如反掌”：
+            随便挑一家公司，平均就会有 6.19 个职位等着应聘者。只要去不超过 5000 人的公司，
+            那么岗位的竞争都不会太激烈，平均每个人对应岗位有 1.14 个。
+            <br><br>
+            然而，数据所呈现的另一面是：
+            <span style="background-color: rgb(157, 184, 221);color: black; font-weight: 600;padding-top: 5px;padding-bottom: 5px;">
+                日本的巨头公司、金融及情报行业（类似于中国的 IT 业）也存在“内卷”的情况。
+            </span>
+            <br><br>
+            从数据来看，一名毕业生如果想要进超过 5000 人的企业，大概每个岗位平均会有其他两名候选人和他竞争。
+            若是要去金融业公司，则大概是五个人竞争一个职位。但这听上去，比中国的大学生目前找工作的竞争压力要小太多。
+            <br><br>
+            不过，日本毕业生想进头部企业，那么要经受的考验和中国的社交媒体、求职社区网站上所描述的
+            “大厂面试”流程不遑多让，行业龙头更有“百里挑一”的层层筛选机制。
+            <br><br>
+            以日本出版业巨头讲谈社 2023 年的招聘流程为例：3747 位申请者中，最终通过面试得到 offer 的仅有 23 人，
+            竞争倍率达到 162.9（162.9 个人争夺 1 个offer）。从 2023 年 2 月到 4 月，申请者们要经历长达两个月的笔试
+            和密集面试，通过难度相当之大。
+            <br><br>
+
+            <div style="text-align: center;">
+                <img src="IMG/pic1.png" style="padding-top: 15px;width: 60%;">
+                <div class="text-img-addition">
+                    讲谈社官网显示，2023 年 3747 个申请者，最后只有 23 人通过面试
+                    <br>
+                    资料来源：讲谈社官网
+                </div>
+            </div>
+        </div>
+
+    <!-- ——————第二段—————— -->
+
+        <br><br>
+        <div class="serial-img" id="2">
+            <img src="IMG/002.png" style="margin: auto;">
+        </div>
+
+        <div class="text-jz-hlt">
+            就业率十年95%以上，
+            <br>
+            但存在一定统计陷阱
+        </div>
+
+        <div class="text">
+            <br>
+            从整体数据上看，应届生除非想进大公司，否则工作并不会太难找。日本的官方就业率数据，也很好地说明了这点。
+            <br><br>
+            然而从 2014 年开始，日本的就业率数据，已经完美到令人生疑。
+            <br><br>
+            2024 年，98.1% 的就业率数据，由日本的文部科学省调查所得出。
+            <span style="background-color: rgb(157, 184, 221);color: black; font-weight: 600;padding-top: 5px;padding-bottom: 5px;">
+                即使在全球疫情最严重的 2022 年，日本大学、高中毕业生的就业率仍然保持在 95% 以上。
+            </span>
+            <br><br>
+            然而根据笔者分析，由于样本抽取和调查实施方法的缘故，
+            <span style="background-color: rgb(157, 184, 221);color: black; font-weight: 600;padding-top: 5px;padding-bottom: 5px;">
+                统计得到的数据比实际要偏高。其主要原因为调查统计的分母，为调查者主观定义的
+            </span>
+            “就职希望人数”。
+        </div>
+
+        <br><br><br><br><br>
+
+        <div class="graph">
+            <div class="graph-bt" style="line-height: 50pt;margin-left: 20%;">
+                日本毕业生就业率
+                <br>
+                <span style="padding-left: 10%;">
+                    连续十年达95%以上
+                </span>
+            </div>
+            <br>
+
+            <img src="IMG/graph3.png">
+            <br><br>
+
+            <div class="graph-addition" style="font-size: 16pt;font-weight: 600;">
+                2024年日本高中毕业生98%的就业率是怎么算出来的？
+            </div>
+
+            <br>
+
+            <img src="IMG/graph4.png">
+            <br><br>
+
+            <div class="graph-addition" style="margin-left: 15%;">
+                | 数据来源：日本文部科学省
+                <br>
+            </div>
+            <br>
+        </div>
+
+        <div class="text">
+            <br>
+            根据文部科学省所述的调查方法，无论是大学生还是高中生，其就业率的计算公式为，就业率 = 实际已就业人数
+            /希望就职者。而对所谓“希望就职者”的界定，其实际操作中存在许多容易造成误差的可能。
+            <br><br>
+            对于高中毕业生来说，文部科学省对今年全日本毕业的 92 万高中生都进行了普查，其中在 3 月底高中生毕业后
+            （日本高中生一般都在 3 月初毕业），12 多万填写自己“希望就职”的高中生中，仅有 2641 人没有找到工作。
+            <br><br>
+            而对于大学生来说，也存在相似的统计问题，许多未就业者，既不一定打算就业，也或许因不积极找工作而不被纳入到统计中。
+            <br><br>
+            因此，
+            <span style="background-color: rgb(157, 184, 221);color: black; font-weight: 600;padding-top: 5px;padding-bottom: 5px;">
+                一些日本的教育工作研究者，对家长和毕业生提出忠告，希望他们关注大学的“实际就业率”
+            </span>
+            （实际就业率 =  实际已就业人数/毕业生人数 - 升学人数）。
+            <br><br>
+            不过根据日本各大学自己统计的实际就业率来看，2023 年度许多学校的就业率，也仅是比 90% 低一点。
+            <br><br>
+            值得一提的是，从数据上来看，并不是越拔尖、越难考的大学，实际就业率就越高。如地方性专门大学神户市看护大学，2023 年实际就业率达到 99%。
+            <br><br>
+            据教育研究者小林哲夫的随笔所述：实际就业率高的大学往往是培养护士、药剂师和其他专业化人才的地区性大学/小型大学。
+            这些小型大学里，教职员工们更加关心学生的就业，他们熟识学生的名字和面孔，并陪伴学生们寻找工作。
+            如果学生们求职过程中遇到困难而灰心丧气，这些大学的教职员工，会在一旁“全程陪伴”鼓励他们。
+            <br><br>
+            这些情况，很能引起笔者的深思，数据的对比充分说明了：
+            <span style="background-color: rgb(157, 184, 221);color: black; font-weight: 600;padding-top: 5px;padding-bottom: 5px;">
+                不论在哪个国家，在求职这个问题上，与其削尖脑袋去内卷高大上的职位，不如真正地将个人的优势，与时代的呼唤结合，
+                并做出选择。
+            </span>
+        </div>
+
+    <!-- ——————第三段—————— -->
+
+        <br><br>
+        <div class="serial-img" id="3">
+            <img src="IMG/003.png" style="margin: auto;">
+        </div>
+
+        <div class="text-jz-hlt">
+            完美的数据和报道轰炸下，
+            <br>
+            应届生就职心态悄然改变
+        </div>
+
+        <div class="text">
+            <br>
+            整体来看，不管是想去小公司就职，还是期待去卷上天的大企业就职。2024 年，日本应届生的就职心态，发生了很微妙的变化。
+            <br><br>
+            日本就业信息网站“Mynavi”在近年做了一个非常“日本”的调研：让接受调查的应届生（1682 人），每年选择一个汉字，来表达他们求职时的心境。
+            2021 年和 2022 年，选择人数最多的汉字都是“苦”字，然而到了 2023 年，“苦”字在调查中下调一位，排名第二。
+            排名第一的汉字变成了“乐”字（“乐”字在日语中，有轻松、简单的含义）。
+            <br><br>
+
+            <div style="text-align: center;">
+                <img src="IMG/pic2.png" style="padding-top: 15px;width: 60%;">
+                <div class="text-img-addition">
+                    | 2023 年就职汉字排行榜/资料来源：Mynavi 2023 年毕业生学生就职情况（8 月）
+                </div>
+            </div>
+
+            <br><br>
+            谈及为何会选择“乐”字，有应届生在调查里回复道：“我并不认为求职是一件艰难的事情，而是一种思考未来、
+            拓展梦想的有趣方式”。“和有趣的人一起干活，实在是很快乐”。“今年找工作真是从容不迫，不仅找到了工作，
+            而且这份工作与我的爱好并行不悖”。
+            <br><br>
+            笔者第一次读到这些感想时，不禁莞尔一笑，觉得这些年轻人“未被社会毒打过”的单纯感、悸动感，
+            让工作了几年的自己十分有感触。
+            <br><br>
+            大谈梦想、希望、前景的，不仅仅只有这些感到“轻松、快乐”的应届生。那些优秀的，经历了层层高压选拔的讲谈社被录取者们，
+            也在个人随想中，表明了一种乐观、向上的基调，来面对充满挑战的职场。
+            <br><br>
+            一位讲谈社被录取者（漫画编辑）在随笔中这么写道：“当面试时，被问及‘10 年后你想成为什么样的人’这个问题时，
+            我回答道：“想成为一名宅男！”......讲谈社是唯一一家让我以真实的自己，而不是虚假的自己，接受挑战的公司。
+            我坚信：贯彻自己最初的理想、坚持真实的自己，才能做自己最好的朋友。”（讲谈社是日本最大的漫画出版社之一）。
+            <br><br>
+            另一位被录取者这样写道：“只有这家公司认真地试图展现我新的一面，展现我对未来的憧憬......
+            从第三次面试开始，我就把我对工作的热爱、对未来的憧憬和热情、我的价值观和想法等等都毫无保留地说了出来。”
+            <br><br>
+            这种朝气蓬勃的追梦宣言，的确也是当下，日本应届生就职情况的一个侧面写照。
+
+        </div>
+
+    <!-- ——————第四段—————— -->
+
+        <br><br>
+        <div class="serial-img" id="4">
+            <img src="IMG/004.png" style="margin: auto;">
+        </div>
+
+        <div class="text-jz-hlt">
+            填补日本工作缺口的外国人，越来越多
+            <br>
+        </div>
+
+        <div class="text">
+            <br>
+            “僧少粥多”、 劳动力严重不足的现实下，日本近年来逐步降低外籍劳工引入的门槛。十年来，赴日工作的外国人数量翻了一倍。
+            <br><br>
+            然而，赴日外国人就业多集中在制造业和建筑业、农业等领域，近年来日本职场苛待外国研修生的新闻事件，也时不时在日本引起舆论。
+            <br>
+        </div>
+
+        <div class="graph">
+            <div class="graph-bt" style="line-height: 50pt;margin-left: 20%;">
+               外国人赴日卷
+                <br>
+                <span style="padding-left: 10%;">
+                    日本人赴外卷
+                </span>
+            </div>
+
+            <div class="graph-fbt">
+                <div style="width: 500pt;background-color:bisque;padding:10px 0px;text-align: left;">
+                    <span>
+                    ⭕十年来赴日工作的外国人数量翻了一倍多
+                    </span>
+                </div>
+            </div>
+
+            <img src="IMG/graph5.png">
+            <br><br>
+
+            <div class="graph-fbt" style="width: 520pt;">
+                <div style="width: 570pt;background-color:bisque;padding:10px 0px;text-align: left;">
+                    <span>
+                    ⭕疫情后，日本年轻人赴澳大利亚打工人数快速增加
+                    </span>
+                </div>
+            </div>
+
+            <img src="IMG/graph6.png">
+            <br><br>
+
+            <div class="graph-addition" style="margin-left: 15%;">
+                注：澳大利亚内务部每年6月份会对去年至当年6月的度假打工签证人数进行统计
+                <br>
+                | 数据来源：日本厚生劳动省，澳大利亚内务部
+                <br>
+            </div>
+            <br>
+        </div>
+
+        <div class="text">
+            <br><br>
+            越来越多的外国人想要去日本工作。然而引人深思的是：疫情后，许多日本年轻人离开日本，
+            赴海外打工赚钱的人数也出现了快速上升趋势。2022-2023 年度，赴澳大利亚打工的日本年轻人人数，已经超过疫情前。
+            <br><br>
+            这一趋势主要出于两重背景：一是日元在近年来创历史记录的贬值；二是由于物价飞涨，虽然日本的名义工资在
+             2024 年大涨了 5%，实际工资（计入物价变动的工资）却连续 22 个月，呈现了下跌趋势。
+            <br><br>
+            总的来说，日本的就业市场虽然缺人，但对本国人来说，日本职场“性价比”低，因此年轻人们仍然在寻找更多出路。
+            但对于不少外国人来说，日本职场或许已足够有“性价比”。“围城里的人想出来，围城外的人想进去”，
+            或是对目前日本劳动力市场，最好的一句概括。
+
+            <br><br><br>
+        </div>
+
+    </div>
+    <br><br><br><br><br><br><br>
+
+    <div class="footer">
+        <br>| 参考文献 |
+        <br>[1]边恕,刘为玲.日本数字经济赋能劳动力就业：逻辑机理、现实路径与经验启示[J].现代日本经济,2024,43(01):72-81.DOI:10.16123/j.cnki.issn.1000-355x.2024.01.006.
+        <br>[2]马继征.日本高等教育普及化初期大学生就业促进政策体系及其启示[J].黑龙江高教研究,2022,40(06):114-119.DOI:10.19903/j.cnki.cn23-1074/g.2022.06.010.
+        <br>Yanjun Wang，Anqian Wang，Jianqing zhai等，《Tens of thousands additional deaths
+        <br>annually in cities of China between 1.5℃ and 2.0℃ warming》，《Science》,2020,09
+        <br>
+        <br>| 数据处理与可视化 | 
+        <br>XXX XXX
+        <br><br>| 采访整理与文案撰写 |
+        <br>XXX XXX
+        <br><br>| 数据 |
+        <br>XXX XXX XXX XXX
+
+        <br><br>
+        
+    </div>
+
+    
+    
+
+    
+
+</body>
+</html>
